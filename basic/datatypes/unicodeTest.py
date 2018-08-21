@@ -15,8 +15,12 @@ a = 'ABC'
 print(a)
 a = b'ABC'
 print(a)
+print('----------------')
+
 # 由于Python的字符串类型是str，在内存中以Unicode表示，一个字符对应若干个字节。
 # 如果要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。
+# unicode(Memory)  encode -> bytes(File)
+# bytes(File)  decode -> unicode(Memory)
 print('ABC'.encode('ascii'))
 print('中文'.encode('utf-8'))
 
@@ -28,6 +32,7 @@ print(b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8'))
 print(len(b'ABC'))
 print(len('中文'))
 
+print('----------------')
 # 计算字节数
 print(len('中文'.encode('utf-8')))
 print(len(b'\xe4\xb8\xad\xe6\x96\x87'))
@@ -53,6 +58,10 @@ print(a)
 print('Age: %s. Gender: %s' % (25, True))
 
 print('growth rate: %d %%' % 7)
+
+# TypeError: %d format: a number is required, not str
+# print('growth rate: %d %%' % str(7))
+print('growth rate: %s %%' % str(7))
 
 # 格式化2
 print('Hello, {0}, 成绩提升了 {1:.1f}%'.format('小明', 17.125))

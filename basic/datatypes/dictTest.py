@@ -6,8 +6,12 @@ d['Adam'] = 67
 print(d)
 print('Adam' in d)
 print('aab' in d)
-print(d.get("aab"))
-print(d.get("aab", -13))
+print(d.get("aab"))  # None
+dx = d.get("aab")
+print(dx is None)  # True
+print(dx == None)  # True
 
-print(d.pop("Bob")) # return latest value
+print(d.get("aab", -13))  # -13  default value
+
+print(d.pop("Bob"))  # return latest value
 print(d)
