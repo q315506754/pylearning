@@ -1,8 +1,17 @@
-# from basic.encapsulation.outterFunc import myadd, mydivide,myempty
-from basic.encapsulation.outterFunc import *
+from basic.encapsulation.outterFunc import myadd, mydivide, myempty
+from basic.encapsulation.outterFunc2 import *
+
+# from basic.encapsulation.outterFunc import *
+# from basic.encapsulation.outterFunc import *
+# from basic.encapsulation.outterFunc import *
+
+
+myadd222()
 
 
 # this import will cause script to be invoked
+# 无论是* 还是 myadd, mydivide,myempty，都导致 __init__.py invoked
+# 同一个包下引入两个的方法，这个包下 __init__.py 只执行一次
 # 就算只引入一部分方法也会让其它脚本执行
 # from basic.encapsulation.outterFunc import myadd, mydivide,myempty
 
@@ -134,13 +143,16 @@ person2('Jack', 24, **extra)
 
 
 # 命名关键字参数
-
 # 限制关键字参数的名字
 def person(name, age, *, city, job):
     print(name, age, city, job)
 
 
 person('Jack', 24, city='Beijing', job='Engineer')
+person('Jack', 24, job='Engineer', city='Beijing')  # 顺序换过来也ok
+# person('Jack', 24, job='Engineer', city='Beijing', city2='Beijing2') # 多了不行 TypeError: person() got an unexpected keyword argument 'city2'
+# person('Jack', 24, job='Engineer') # 少了也不行 TypeError: person() missing 1 required keyword-only argument: 'city'
+
 # TypeError: person() takes 2 positional arguments but 4 were given
 # person('Jack', 24, 'Beijing', 'Engineer')
 
@@ -157,6 +169,7 @@ def person(name, age, *, city='Beijing', job):
 
 person('Jack', 24, job='Engineer')
 
+
 # TypeError: person() missing 1 required keyword-only argument: 'job'
 # person('Jack', 24)
 
@@ -169,19 +182,21 @@ person('Jack', 24, job='Engineer')
 def f1(a, b, c=0, *args, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
 
+
 def f2(a, b, c=0, *, d, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
 
+
 f1(1, 2)
-f1(1, 2,4,4,4)
-f1(1, 2,4,4,4,aa=1,bb=2,cc=3)
-f1(1, 2,4,4,4,df=1,bb=2,cc=3)
+f1(1, 2, 4, 4, 4)
+f1(1, 2, 4, 4, 4, aa=1, bb=2, cc=3)
+f1(1, 2, 4, 4, 4, df=1, bb=2, cc=3)
 f2(1, 2, d=99, ext=None)
 # f2(1, 2, 3,4,d=6)
-f2(1, 2, 3,d=6)
+f2(1, 2, 3, d=6)
 
-args = (1, 2, 3, 4,5,6)
+args = (1, 2, 3, 4, 5, 6)
 kw = {'d': 99, 'x': '#'}
 f1(*args, **kw)
 
-f2(*(4,5,6), **kw)
+f2(*(4, 5, 6), **kw)

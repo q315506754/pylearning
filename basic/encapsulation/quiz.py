@@ -8,8 +8,9 @@ addToList("aa")  # ['aa']
 addToList("aa")  # ['aa', 'aa']
 addToList("aa")  # ['aa', 'aa', 'aa']
 
+
 # 修改版
-def add_end(str,L=None):
+def add_end(str, L=None):
     if L is None:
         L = []
     L.append(str)

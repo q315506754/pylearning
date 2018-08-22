@@ -76,3 +76,8 @@ a = 'abcabcbca'
 print(a.replace('a', 'A'))
 print(a)
 print("------------------")
+
+print('  '.strip())
+print('  A'.strip())
+print('  A   B'.strip())
+print('  A   B   '.strip())
