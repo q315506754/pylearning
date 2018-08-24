@@ -35,3 +35,5 @@ print(T[:])
 print(T[2:])
 print(T[2:4])
 print(T[-3:])
+
+print((x for x in range(10))[:])

@@ -1,3 +1,4 @@
+from collections import Iterator, Iterable
 from functools import reduce
 
 
@@ -40,6 +41,7 @@ def myf(x):
 
 print(add(33, 22, myf))
 
+
 #
 #
 # mr map-reduce
@@ -80,7 +82,6 @@ if prod([3, 5, 7, 9]) == 945:
 else:
     print('测试失败!')
 
-
 # def str2float(s):
 #     pass
 #
@@ -91,8 +92,15 @@ else:
 # else:
 #     print('测试失败!')
 
-#filter
-print(filter(lambda x:x is not None,['aaa',2323,None,333,True,False]))
+# filter
+print(filter(lambda x: x is not None, ['aaa', 2323, None, 333, True, False])) #<filter object at 0x0000021492FCD4A8>
 print(list(filter(lambda x: x is not None, ['aaa', 2323, None, 333, True, False])))
 
-print(list(filter(lambda x:isinstance(x,(int,float)) and x % 2 ==0,['aaa',2323,None,333,444,666,True,False])))
+print(
+    list(filter(lambda x: isinstance(x, (int, float)) and x % 2 == 0, ['aaa', 2323, None, 333, 444, 666, True, False])))
+
+aa = filter(lambda x: x is not None, ['aaa', 2323, None, 333, True, False])
+print(isinstance(aa,Iterable)) #True
+print(isinstance(aa,Iterator)) #True
+print(next(aa))
+print(next(aa))

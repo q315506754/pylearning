@@ -57,6 +57,8 @@ print(bool(33))  # True
 print(bool(''))  # False
 print(bool('123'))  # True
 print(bool('0'))  # True
+print(bool(int('0')))  # False
+print(bool(float('0')))  # False
 print(bool(0))  # False
 print(bool(-1))  # True
 print(bool(0.01))  # True

@@ -55,6 +55,7 @@ def odd():
     yield (3)
     print('step 3')
     yield (5)
+    print('step 4')
 
 
 print("-----------------")

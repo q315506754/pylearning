@@ -46,4 +46,4 @@ print(s[2][1])
 L = []
 print(L)
 
-print(['aaa',None,None,'b'])
+print(['aaa', None, None, 'b'])

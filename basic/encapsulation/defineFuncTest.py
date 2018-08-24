@@ -163,6 +163,9 @@ person('Jack', 24, job='Engineer', city='Beijing')  # 顺序换过来也ok
 person('Jack', 24, **{'city': 'Beijing**', 'job': 'Engineer**'})
 
 
+# TypeError: 'city' is an invalid keyword argument for print()
+# print( **{'city': 'Beijing**', 'job': 'Engineer**'})
+
 def person(name, age, *, city='Beijing', job):
     print(name, age, city, job)
 
@@ -186,6 +189,17 @@ def f1(a, b, c=0, *args, **kw):
 def f2(a, b, c=0, *, d, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
 
+
+def f3(a, b, c=0, *args, d, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'd =', d, 'kw =', kw)
+
+
+#     错误定义
+# def f3(a, b, c=0, *args,**kw,d):
+#     print('a =', a, 'b =', b, 'c =', c, 'args =',args, 'd =', d, 'kw =', kw)
+#     错误定义
+# def f3(a, b, c=0,  **kw,*args):
+#     print('a =', a, 'b =', b, 'c =', c, 'args =',args, 'd =', d, 'kw =', kw)
 
 f1(1, 2)
 f1(1, 2, 4, 4, 4)
