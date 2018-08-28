@@ -54,24 +54,14 @@ print("end...")  #
 
 # 按位依次比较 若该位相等，则比较下一位，不相等时返回该位比较结果，或位数不够时直接返回false
 print([1, 2, 3] < [1, 2, 3, 4])  # True
-print([1, 2, 3] < [4,1, 2, 3])  # True
-print([1, 2, 3] < [4,2, 1, 3])  # True
+print([1, 2, 3] < [4, 1, 2, 3])  # True
+print([1, 2, 3] < [4, 2, 1, 3])  # True
 print([1, 2, 3] < [2, 1])  # True
 print([1, 2, 3] < [2])  # True
 print([1, 2, 3] < [1])  # False
 print([1, 2, 3] < [1, 2, 3])  # False
-print([1, 2, 3] < [1, 2, 3,0])  # True
-print([1, 2, 3] < [2, 2, 3,0])  # True
+print([1, 2, 3] < [1, 2, 3, 0])  # True
+print([1, 2, 3] < [2, 2, 3, 0])  # True
 
 print([1, 2, 3] > [1, 2, 2])  # True
-print([1, 2, 3] > [1, 2, 3,0])  # False
-
-
-#sorted
-print(sorted([36, 5, -12, 9, -21]))
-print(sorted([36, 5, -12, 9, -21], key=abs))
-L = [36, 5, -12, 9, -21]
-print(sorted(L, key=abs))
-print(L) # 排序不改变原数组
-print(sorted(['Credit', 'Zoo', 'about', 'bob']))
-
+print([1, 2, 3] > [1, 2, 3, 0])  # False

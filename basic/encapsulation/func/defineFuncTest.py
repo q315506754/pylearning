@@ -1,5 +1,5 @@
-from basic.encapsulation.outterFunc import myadd, mydivide, myempty
-from basic.encapsulation.outterFunc2 import *
+from basic.encapsulation.func.outterFunc import myadd, mydivide, myempty
+from basic.encapsulation.func.outterFunc2 import *
 
 # from basic.encapsulation.outterFunc import *
 # from basic.encapsulation.outterFunc import *

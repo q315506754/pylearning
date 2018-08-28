@@ -1,4 +1,4 @@
-from collections import Iterator, Iterable
+from collections.abc import Iterator, Iterable
 from functools import reduce
 
 
@@ -22,7 +22,8 @@ a('me.')
 
 print(abs)
 
-abs = 32
+
+# abs = 32
 
 
 # TypeError: 'int' object is not callable
@@ -93,14 +94,25 @@ else:
 #     print('测试失败!')
 
 # filter
-print(filter(lambda x: x is not None, ['aaa', 2323, None, 333, True, False])) #<filter object at 0x0000021492FCD4A8>
+print(filter(lambda x: x is not None, ['aaa', 2323, None, 333, True, False]))  # <filter object at 0x0000021492FCD4A8>
 print(list(filter(lambda x: x is not None, ['aaa', 2323, None, 333, True, False])))
 
 print(
     list(filter(lambda x: isinstance(x, (int, float)) and x % 2 == 0, ['aaa', 2323, None, 333, 444, 666, True, False])))
 
 aa = filter(lambda x: x is not None, ['aaa', 2323, None, 333, True, False])
-print(isinstance(aa,Iterable)) #True
-print(isinstance(aa,Iterator)) #True
+print(isinstance(aa, Iterable))  # True
+print(isinstance(aa, Iterator))  # True
 print(next(aa))
 print(next(aa))
+
+# sorted
+print(sorted([36, 5, -12, 9, -21]))
+print(sorted([36, 5, -12, 9, -21], key=abs))
+L = [36, 5, -12, 9, -21]
+print("key=abs", sorted(L, key=abs))
+print("key=abs,reverse=True", sorted(L, key=abs, reverse=True))
+print("origin ", L)  # 排序不改变原数组
+
+# 默认情况下，对字符串排序，是按照ASCII的大小比较的，由于'Z' < 'a'，结果，大写字母Z会排在小写字母a的前面。
+print(sorted(['Credit', 'Zoo', 'about', 'bob']))  #
