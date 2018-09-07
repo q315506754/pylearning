@@ -20,13 +20,14 @@ import sys
 from basic.encapsulation.module.moduleImport import *
 
 # ['C:/pyprojects/pylearning/basic/encapsulation/module.py', 'aa', 'bb']
-print(sys)
+print(sys)  # <module 'sys' (built-in)>
 print(fABC())
 print(ABC())  # <basic.encapsulation.module.moduleImport.ABC object at 0x00000212D53DA080>
 print(ABC2())  # <basic.encapsulation.module.moduleImport.ABC2 object at 0x00000212D53DA080>
-print(sys.argv)
+print(sys.argv)  # ['C:/pyprojects/pylearning/basic/encapsulation/module/module.py']
 # 默认情况下，Python解释器会搜索当前目录、所有已安装的内置模块和第三方模块，搜索路径存放在sys模块的path变量中：
-print(sys.path)
+print(
+    sys.path)  # ['C:\\pyprojects\\pylearning\\basic\\encapsulation\\module', 'C:\\pyprojects\\pylearning', 'C:\\software\\python-3.7.0\\python37.zip', 'C:\\software\\python-3.7.0\\DLLs', 'C:\\software\\python-3.7.0\\lib', 'C:\\software\\python-3.7.0', 'C:\\software\\python-3.7.0\\lib\\site-packages', 'C:\\software\\PyCharm 2018.2\\helpers\\pycharm_matplotlib_backend']
 
 # 如果我们要添加自己的搜索目录，有两种方法：
 #

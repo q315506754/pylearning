@@ -1,6 +1,6 @@
 import math
 
-from basic.encapsulation.outterFunc import move
+from basic.encapsulation.func.outterFunc import move
 
 x, y = move(100, 100, 60, math.pi / 6)
 print(x, y)

@@ -17,3 +17,11 @@ print((1,) + (2, 4) + (3,))
 
 # TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
 # print({'a':1}+{'b':1})
+
+a = 3
+b = 4
+a, b = a + b, a - b
+print(a, b)
+c = a + b, a - b
+print(c)
+print(type(c))  # <class 'tuple'>

@@ -9,8 +9,9 @@ def now():
 now()
 f = now
 print(now.__name__)
-print(now.__class__)
-print(now.__code__)
+print(now.__class__)  # <class 'function'>
+print(
+    now.__code__)  # <code object now at 0x0000028B6F6F5E40, file "C:/pyprojects/pylearning/basic/features/proxy/decorator.py", line 5>
 
 
 # 现在，假设我们要增强now()函数的功能，比如，在函数调用前后自动打印日志，
@@ -28,13 +29,27 @@ def log(func):
     return wrapper
 
 
+def logWithoutParam():
+    def deco(func):
+        def wrapper(*args, **kw):
+            print('--logWithoutParam--call %s():' % (func.__name__))
+            return func(*args, **kw)
+
+        return wrapper
+
+    return deco
+
+
 N = log(now)
-N()
+N()  # !wrap success
 
 
 # 中间有任意空行都可以 相当于
 # myfunclog = log(myfunclog)
 @log
+# 无参数注解不能这么使用  因为 myfunclog = logWithoutParam(myfunclog)  此时会传1个参数
+# TypeError: logWithoutParam() takes 0 positional arguments but 1 was given
+# @logWithoutParam
 def myfunclog():
     print(__name__, " invoked.")
     # 但你去看经过decorator装饰之后的函数，它们的__name__已经从原来的'now'变成了'wrapper'：
@@ -66,9 +81,10 @@ def myfunclog2():
 
 
 myfunclog2()
+print('---', myfunclog2.__name__)  # --- wrapper
 
 N2 = logWithParam("p1p11111", "ppp22222")(lambda x: print('lambda print:%s' % x))
-print(N2)
+print(N2)  # <function logWithParam.<locals>.deco.<locals>.wrapper at 0x00000165512FA510>
 N2(23)
 
 
@@ -98,6 +114,7 @@ print('mylog3.__name__', mylog3.__name__)  # mylog3.__name__ mylog3
 
 mylog3 = log3(mylog3)
 print('mylog3.__name__', mylog3.__name__)  # mylog3.__name__ mylog3
+# 从这里可以看出 包装对象的函数名仍为原函数名了
 
 mylog3()
 

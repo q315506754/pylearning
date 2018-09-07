@@ -15,3 +15,12 @@ print(d.get("aab", -13))  # -13  default value
 
 print(d.pop("Bob"))  # return latest value
 print(d)
+
+e = {}
+print(e)
+# AttributeError: 'dict' object has no attribute 'aa'
+# e.aa= 33
+
+# print(e)
+e['bb'] = 44
+print(e)  # {'bb': 44}

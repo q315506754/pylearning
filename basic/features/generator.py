@@ -126,3 +126,6 @@ for t in triangles2():
     n = n + 1
     if n == 10:
         break
+
+# dead cycle
+# print(list(triangles2()))

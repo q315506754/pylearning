@@ -8,7 +8,7 @@ class Animal(object):
         # self.__age 是私有的 恒定输出unkown
 
     def searchFood(self):
-        print(self.__class__.__name__, '不知道如何寻觅实物..')
+        print(self.__class__.__name__, 'Animal不知道如何寻觅实物..')
 
 
 animal = Animal()
