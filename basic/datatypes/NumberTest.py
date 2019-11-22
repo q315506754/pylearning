@@ -5,7 +5,8 @@ a = -1
 print(a)
 a = 0xff00
 print(a)
-a = 0xa5b4c3d2
+a = 0xa5b4c3d2323
+a = 0xa5b4c3d2323df4343443434
 print(a)
 print("------------------")
 
@@ -77,6 +78,7 @@ print(a.replace('a', 'A'))
 print(a)
 print("------------------")
 
+# trim
 print('  '.strip())
 print('  A'.strip())
 print('  A   B'.strip())

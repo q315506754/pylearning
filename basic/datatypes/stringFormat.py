@@ -9,6 +9,8 @@ a = 'Hello, %x' % 66666
 print(a)
 a = 'Hello, %d' % 66666
 print(a)
+a = 'Hello, %d, %d, %d' % (66666, 7777, 8888)
+print(a)
 # %d	整数
 # %f	浮点数
 # %s	字符串
@@ -28,3 +30,5 @@ print('growth rate: %s %%' % str(7))
 print('Hello, {0}, 成绩提升了 {1:.1f}%'.format('小明', 17.125))
 
 print("a=", 1, "b=", True)
+
+print('sdsd'+'sdsdsd')

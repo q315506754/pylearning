@@ -47,6 +47,7 @@ N()  # !wrap success
 # 中间有任意空行都可以 相当于
 # myfunclog = log(myfunclog)
 @log
+# @logWithoutParam
 # 无参数注解不能这么使用  因为 myfunclog = logWithoutParam(myfunclog)  此时会传1个参数
 # TypeError: logWithoutParam() takes 0 positional arguments but 1 was given
 # @logWithoutParam
@@ -105,6 +106,7 @@ def log3(func):
     return wrapper3
 
 
+@log3
 def mylog3():
     print('mylog3...')
 
@@ -150,3 +152,36 @@ if f != 33:
     print('测试失败!')
 elif s != 7986:
     print('测试失败!')
+
+
+def tlog1(func):
+    @tlog2
+    def wrapper1(*args, **kw):
+        print('wrapper1...call...'+__name__)
+        return func(*args, **kw)
+
+    return wrapper1
+
+def tlog2(func):
+    @tlog3
+    def wrapper2(*args, **kw):
+        print('wrapper2...call...'+__name__)
+        return func(*args, **kw)
+
+    return wrapper2
+
+def tlog3(func):
+    def wrapper3(*args, **kw):
+        print('wrapper3...call...'+__name__)
+        return func(*args, **kw)
+
+    return wrapper3
+
+@tlog1
+def mylog3():
+    print('mylog3...')
+
+
+# 包装总是包装到方法最外层
+
+mylog3()

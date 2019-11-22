@@ -28,6 +28,8 @@ print('中文'.encode('utf-8'))
 
 print(b'ABC'.decode('ascii'))
 print(b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8'))
+print(b'\xb4\xed\xce\xf3'.decode('utf-8'))
+# print(b'\xe4\xb8\xad\xe6\x96\x87'.decode('unicode'))
 
 print(len(b'ABC'))  # 3
 print(len('中文'))  # 2
@@ -39,3 +41,8 @@ print(len(b'\xe4\xb8\xad\xe6\x96\x87'))  # 6
 
 print(isinstance('中文'.encode('utf-8'), bytes))  # true
 print(isinstance('中文'.encode('utf-8'), str))  # False
+
+arr = 'ABC'.encode('ascii')
+print(type(arr))
+print(arr[0])
+print(arr[1])

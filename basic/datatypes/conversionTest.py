@@ -15,13 +15,13 @@ d = str(obj)
 print(d)
 
 d2 = "".join(obj)
-print(d2)
+print(d2) #{'a': 23, 'b': 4}
 d2 = "".join(classmates)
-print(d2)
-d2 = "-".join(obj)
-print(d2)
+print(d2)  #ab
+d2 = "-".join (obj)
+print(d2) #a-b
 d2 = "-".join(classmates)
-print(d2)
+print(d2) #Michael-Bob-Tracy
 
 # birth = input('birth: ')
 birth = '1987'

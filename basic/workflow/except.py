@@ -1,10 +1,12 @@
 import logging
+# from logging import *
 
 try:
     print('try...')
     r = 10 / 0
     print('result:', r)
 except ZeroDivisionError as e:
+    # e.with_traceback()
     print('except:', e)
 finally:
     print('finally...')
@@ -51,7 +53,7 @@ def main():
     bar('0')
 
 
-# main()
+main()
 
 def main():
     try:
@@ -70,6 +72,7 @@ def main():
         #   return 10 / int(s)
         # ZeroDivisionError: division by zero
         logging.exception(e)
+        # exception(e)
 
 
 # Python内置的logging模块可以非常容易地记录错误信息：

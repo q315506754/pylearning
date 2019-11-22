@@ -1,0 +1,2 @@
+def tpfunc():
+    pass

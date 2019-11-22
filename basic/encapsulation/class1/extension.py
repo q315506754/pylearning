@@ -1,3 +1,6 @@
+
+# 继承与多态
+
 class Animal(object):
     name = 'p name'
     __age = 'unkown'
@@ -34,6 +37,7 @@ class Cat(Animal):
         print(self.__class__.__name__, '优雅地走猫步')
 
     def searchFood(self):
+        # super().searchFood()
         print('猫：不给不吃呗')
 
 

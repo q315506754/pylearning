@@ -123,6 +123,7 @@ def person(name, age, **kw):
 def person2(name, age, **kw22):
     print("kw22:" + str(kw22))
     print("is dict:" + str(isinstance(kw22, dict)))
+    # print("is dict:" + isinstance(kw22, dict))
 
     # TypeError: 'gender' is an invalid keyword argument for str()
     # print("kw22:" + str(**kw22))

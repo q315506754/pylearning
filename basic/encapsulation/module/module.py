@@ -12,16 +12,38 @@
 # 一个字符串，表示模块的文档注释，任何模块代码的第一个字符串都被视为模块的文档注释；
 ' a test module '
 
+
 __author__ = 'Michael Liao'
 
 import sys
 
+# 依次执行  __init__.py
 # import basic.encapsulation.module.moduleImport
 from basic.encapsulation.module.moduleImport import *
+from basic.encapsulation.module import *
+from basic.encapsulation.module import moduleImport
+from basic.encapsulation.module import mainModuleFunc as nnnName
+# from basic.encapsulation.module.moduleImport import *
+import basic.encapsulation.module
+import basic.encapsulation.tp
+from basic.encapsulation import tp
+
+nnnName()
+
+# module.mainModuleFunc()
+tp.tpfunc()
+# tpfunc()
+
+sys.api_version
+
+mainModuleFunc()
+moduleImport.fABC()
 
 # ['C:/pyprojects/pylearning/basic/encapsulation/module.py', 'aa', 'bb']
 print(sys)  # <module 'sys' (built-in)>
 print(fABC())
+print(mainModuleFunc())
+# print(module.mainModuleFunc())
 print(ABC())  # <basic.encapsulation.module.moduleImport.ABC object at 0x00000212D53DA080>
 print(ABC2())  # <basic.encapsulation.module.moduleImport.ABC2 object at 0x00000212D53DA080>
 print(sys.argv)  # ['C:/pyprojects/pylearning/basic/encapsulation/module/module.py']

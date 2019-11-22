@@ -1,1 +1,1 @@
-print("__init__.py invoked")
+print("__init__.py   invoked from",__name__)

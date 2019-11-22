@@ -16,6 +16,8 @@ s = Student()
 
 # ValueError: score must between 0 ~ 100!
 # s.set_score(9999)
+s.set_score(99)
+print(s.__dict__)
 
 
 class Student(object):
@@ -24,13 +26,13 @@ class Student(object):
     # 把一个getter方法变成属性，只需要加上@property就可以了
     @property
     def score(self):
-        print('get score invoked')
+        print('get score invoked '+__name__)
         return self._score
 
     # @property本身又创建了另一个装饰器@score.setter
     @score.setter
     def score(self, value):
-        print('set score invoked')
+        print('set score invoked '+__name__)
         if not isinstance(value, int):
             raise ValueError('score must be an integer!')
         if value < 0 or value > 100:
@@ -43,6 +45,7 @@ s = Student()
 # s.set_score(9999)
 s.score = 60  # OK，实际转化为s.set_score(60)
 print(s.score)  # OK，实际转化为s.get_score()
+print(s.__dict__)
 
 
 class Student(object):

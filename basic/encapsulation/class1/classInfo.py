@@ -1,3 +1,7 @@
+
+
+# 类与实例、反射、方法与类内部定义的关系
+
 def myf():
     pass
 
@@ -90,7 +94,7 @@ print(hasattr(ml, '__len__'))  # True
 print(hasattr(ml, '__a'))  # True
 print(hasattr(ml, '__ab'))  # False
 
-print(ml.__len__)  # <bound method MyLen.__len__ of <__main__.MyLen object at 0x00000207D1C08A58>>
+print("`11"+str(ml.__len__))  # <bound method MyLen.__len__ of <__main__.MyLen object at 0x00000207D1C08A58>>
 setattr(ml, '__len__', lambda: 'aab len')
 print(len(MyLen()))  # 33
 print(len(ml))  # 33   ???

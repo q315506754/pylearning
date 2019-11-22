@@ -1,5 +1,8 @@
 from basic.encapsulation.class1.teacherModule import Teacher
 
+#动态创建类、元类、继承、类共享字段
+
+
 a = Teacher()
 print(a)
 print(a.__class__)  # <class 'basic.encapsulation.class1.teacherModule.Teacher'>
@@ -90,10 +93,12 @@ L2 = list()
 
 class Field(object):
 
+    # 构造函数
     def __init__(self, name, column_type):
         self.name = name
         self.column_type = column_type
 
+    # toString
     def __str__(self):
         return '<%s:%s>' % (self.__class__.__name__, self.name)
 

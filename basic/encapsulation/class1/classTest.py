@@ -100,7 +100,7 @@ print(__a__)
 dt.set_name('set name func..')
 print(dt.get_name())  # set name func..
 dt._Dto__name = 'set name through _Dto__name'
-print(dt.get_name())  # set name through _Dto__name
+print(dt.get_name())  # set name through _Dto__name  说明_Dto__name修改成功
 dt.__name = 'try set __name'
-print(dt.get_name())  # set name through _Dto__name
+print(dt.get_name())  # set name through _Dto__name   说明__name无法修改成功
 print(dt.__name)  # try set __name

@@ -1,3 +1,5 @@
+#类变量与实例变量
+
 class Student(object):
     # 类变量 共享
     pname = 'pname xx'
@@ -22,6 +24,7 @@ print(paren.score)
 print(Student.pname)  # pname xx
 print(paren.pname)  # pname xx
 print(StudentCd.pname)  # StudentCd pname yy
+
 Student.pname = 'modified pname'
 print(Student.pname)  # modified pname
 print(paren.pname)  # modified pname

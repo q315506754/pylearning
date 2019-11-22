@@ -1,0 +1,2 @@
+def mainModuleFunc():
+    print('mainModuleFunc')

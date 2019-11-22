@@ -1,0 +1,10 @@
+入门
+http://c.biancheng.net/view/2011.html
+
+python3 BeautifulSoup模块
+1、安装：
+pip install beautifulsoup4
+
+2、可选择安装解析器：
+pip install lxml
+pip install html5lib

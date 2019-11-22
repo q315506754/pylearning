@@ -1,5 +1,6 @@
 s = {1, 3, 4, 4}
 print(s)  # no duplicant
+print(type(s))  # <class 'set'>
 # s=set(1,2,3) # wrong
 # print(s)
 s = set([1, 2, 3, 3])

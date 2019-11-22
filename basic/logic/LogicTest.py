@@ -4,7 +4,7 @@ print(1 == 1)  # √
 print(1 == True)  # √
 print(True is True)  # √
 print(True == True)  # √
-print(1 is True)  # X  ===
+print(1 is True)  # X  类似于===概念
 print(1 is not True)  # √
 print(1.01 == True)  # X
 print(3 == True)  # X

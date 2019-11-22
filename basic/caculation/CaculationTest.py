@@ -25,3 +25,8 @@ print(a, b)
 c = a + b, a - b
 print(c)
 print(type(c))  # <class 'tuple'>
+
+a,b,c,d = a + b,a + b,a + b,a + b
+c = a,b,c,d
+print(c)
+print(type(c))  # <class 'tuple'>

@@ -22,6 +22,7 @@ print(L[0:100:2])  # index [0,2,4,6,8]  隔2取1
 print(L[0::2])  # index [0,2,4,6,8]  隔2取1
 print(L[::2])  # index [0,2,4,6,8]  隔2取1
 
+
 # copy
 print(L[:])
 
@@ -36,4 +37,11 @@ print(T[2:])
 print(T[2:4])
 print(T[-3:])
 
-print((x for x in range(10))[:])
+# print((x for x in range(10)))
+# print((x for x in range(10))[:])
+
+L = [x * x for x in range(1, 11)]
+print(L)
+# tuple无法使用generator生成
+L = (x * x for x in range(1, 11))
+print(L)
